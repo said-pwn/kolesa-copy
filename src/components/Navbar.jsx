@@ -84,7 +84,7 @@ const Navbar = () => {
       <nav className="hidden md:flex bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between w-full">
           <Link to="/" className="relative text-xl lg:text-2xl font-bold">
-            Avtobozor
+            Mosinabozor.uz
             <span className="absolute -top-2 -right-15 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-r rounded-t">
               test v0.1
             </span>
@@ -106,6 +106,7 @@ const Navbar = () => {
               >
                 <User className="w-5 h-5" />
                 <span>{currentUser.nickname}</span>
+                <span>{texts.profile}</span>
               </Link>
             )}
 
@@ -129,7 +130,7 @@ const Navbar = () => {
           <Menu size={26} />
         </button>
         <Link to="/" className="relative text-xl lg:text-2xl font-bold">
-          Avtobozor
+          Mosinabozor.uz
           <span className="absolute -top-2.5 -right-15 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-r rounded-t">
             test v0.1
           </span>
@@ -187,7 +188,7 @@ const Navbar = () => {
       <div className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-md flex justify-around items-center py-2 md:hidden z-40">
         <Link to="/" className="flex flex-col items-center text-gray-700">
           <Home size={22} />
-          <span className="text-xs">Главная</span>
+          <span className="text-xs">{texts.main}</span>
         </Link>
 
         <button
@@ -227,12 +228,14 @@ const Navbar = () => {
         {currentUser ? (
           <Link to="/profile" className="flex flex-col items-center text-gray-700">
             <User size={22} />
-            <span className="text-xs">Профиль</span>
+            <span className="text-xs">{texts.profile}</span>
+            {/* <span className="text-xs">{currentUser.nickname}</span> */}
+            {/* <span>{texts.profile}</span> */}
           </Link>
         ) : (
           <Link to="/register" className="flex flex-col items-center text-gray-700">
             <User size={22} />
-            <span className="text-xs">Вход</span>
+            <span className="text-xs">{texts.enter}</span>
           </Link>
         )}
       </div>

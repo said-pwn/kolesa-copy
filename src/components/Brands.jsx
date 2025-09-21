@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaRegEye, FaRegHeart } from "react-icons/fa";
 import dayjs from "dayjs";
 import carrr from "../assets/hero/carrr.webp";
+import { LanguageContext } from "./context/LanguageContext";
+
+
+
 
 const brands = [
   { name: "Audi", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Audi_logo_detail.svg" },
@@ -26,11 +30,17 @@ const brands = [
 ];
 
 export default function BrandList() {
+  function useLanguage() {
+  const { language, texts } = useContext(LanguageContext);
+  return { language, text: texts };
+}
   const [showAll, setShowAll] = useState(false);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(30);
 
   const visibleBrands = showAll ? brands : brands.slice(0, 15);
+
+  const { text } = useLanguage();
 
   useEffect(() => {
     // имитация загрузки
@@ -64,9 +74,9 @@ export default function BrandList() {
   return (
     <section className="px-6 py-6">
     <aside className="block md:hidden w-64  top-20 ">
-          <h3 className="text-lg font-bold mb-3">Поиск авто по городам</h3>
+          <h3 className="text-lg font-bold mb-3">{text.search} {text.avto} {text.po} {text.sities}</h3>
           <ul className="flex flex-col gap-2">
-            {["Ташкент", "Самарканд", "Бухара", "Андижан", "Наманган", "Фергана"].map(
+            {[text.tashkent, "Самарканд", "Бухара", "Андижан", "Наманган", "Фергана"].map(
               (city) => (
                 <li key={city}>
                   <a
@@ -171,7 +181,7 @@ export default function BrandList() {
       </section>
 
       {/* Бренды */}
-      <h2 className="text-4xl font-bold text-black mb-8">Поиск объявлений</h2>
+      <h2 className="text-4xl font-bold text-black mb-8">{Text.search} объявлений</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-5">
         {visibleBrands.map((brand, index) => (
           <div

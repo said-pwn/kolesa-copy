@@ -17,6 +17,15 @@ const translations = {
     profile: "Профиль",
     legkovye: "Легковые",
     mototechnika: "Мототехника",
+    main: "Главная",
+    enter:'Регистрация/Вход',
+    hotof: "Горячие предложения",
+    want:"Хочу быть здесь",
+    search:"Поиск",
+    avto:"авто",
+    po:"по",
+    sities:"городам",
+    tashkent:"Ташкент"
   },
   UZ: {
     cars: "Mashinalar",
@@ -31,6 +40,15 @@ const translations = {
     profile: "Profil",
     legkovye: "Yengil avtomobillar",
     mototechnika: "Mototexnika",
+    main: "Bosh sahifa",
+    enter:"Ro'yxatlanish/Kirish",
+    hotof: "Issiq takliflar",
+    want:"Shu erda bolmoqchiman",
+    search:"Qidiruv",
+    avto:"avto",
+    po:"bo'yicha",
+    sities:"shaharlar",
+    tashkent:"Toshkent"
   },
   EN: {
     cars: "Cars",
@@ -45,6 +63,14 @@ const translations = {
     profile: "Profile",
     legkovye: "Passenger cars",
     mototechnika: "Motorcycles",
+    main: "Home",
+    enter:'Reg/Enter',
+    hotof: "Hot Offers",
+    want:"I want to be here",
+    search:"Search",
+    po:"by",
+    sities:"cities",
+    tashkent:"Tashkent"
   },
 };
 

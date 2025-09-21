@@ -1,8 +1,15 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import fire from "../assets/hero/fire.png";
 import carrr from "../assets/hero/carrr.webp";
 import { Link } from "react-router-dom";
+import { LanguageContext } from "./context/LanguageContext";
+import { useContext } from "react";
+
+function useLanguage() {
+  const { language, texts } = useContext(LanguageContext);
+  return { language, text: texts };
+}
 
 function HotOfferCard({ image, title, price, description }) {
   return (
@@ -22,6 +29,7 @@ function HotOfferCard({ image, title, price, description }) {
   );
 }
 
+
 export default function HotOffers() {
   const offers = [
     { image: carrr, title: "Toyota Camry 2022", price: "25 000 $", description: "2.5L, автомат, пробег 50 000 км." },
@@ -36,6 +44,8 @@ export default function HotOffers() {
     { image: carrr, title: "Toyota Prado 2021", price: "55 000 $", description: "Внедорожник в идеале." },
   ];
 
+
+  const { text } = useLanguage();
   const [startIndex, setStartIndex] = useState(0);
   const visibleCount = 4; // ПК
   const handlePrev = () => setStartIndex((prev) => Math.max(prev - 1, 0));
@@ -45,13 +55,13 @@ export default function HotOffers() {
   return (
     <section className="px-4 py-6">
       <h2 className="text-xl sm:text-2xl mb-4 flex items-center gap-2">
-        Горячие предложения
+          {text.hotof}
         <img src={fire} alt="fire" className="w-6 h-6 sm:w-7 sm:h-7 object-contain" />
         <Link
           to="/soon"
           className="text-xs sm:text-sm text-blue-700 border-b hover:text-red-600 hover:border-none"
         >
-          Хочу сюда
+          {text.want}
         </Link>
       </h2>
 
@@ -101,7 +111,7 @@ export default function HotOffers() {
       <Link to="/submit-ad">
         <div className="flex items-center justify-center mt-9">
           <button className="cursor-pointer border-b border-blue-700 text-blue-700">
-            Подать объявление
+            {text.submitAd}
           </button>
         </div>
       </Link>
