@@ -1,0 +1,22 @@
+// src/pages/NotFound.jsx
+import React from "react";
+import { Car, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+
+export default function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen  text-black text-center p-6">
+      <Car className="w-16 h-16 text-red-500 animate-bounce mb-4" />
+      <h1 className="text-6xl font-extrabold text-red-500">404</h1>
+      <p className="text-black text-lg mb-6">
+        Упс! Похоже, вы свернули не туда.
+      </p>
+      <Link
+        to="/"
+        className="bg-red-500 hover:bg-red-600 transition px-5 py-3 rounded-xl shadow-md text-white font-bold flex items-center gap-2"
+      >
+        <ArrowLeft className="w-4 h-4" /> На главную
+      </Link>
+    </div>
+  );
+}
