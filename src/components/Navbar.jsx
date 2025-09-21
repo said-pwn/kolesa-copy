@@ -63,7 +63,7 @@ const links = [
           <Link to="/" className="relative text-xl lg:text-2xl font-bold">
   Avtobozor
   <span className="absolute -top-2 -right-19 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-r rounded-t">
-    test version
+    test v0.1
   </span>
 </Link>
 
@@ -119,7 +119,7 @@ const links = [
                <Link to="/" className="relative text-xl lg:text-2xl font-bold">
   Avtobozor
   <span className="absolute -top-2.5 -right-20 bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-r rounded-t">
-    test version
+    test v0.1
   </span>
 </Link>
         <div className="w-6" />
